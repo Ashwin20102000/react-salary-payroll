@@ -1,0 +1,18 @@
+h1,
+p {
+  font-family: Lato;
+}
+.docs {
+  margin: 30%;
+  position: relative;
+  top: 20px;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  left: -12%;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
