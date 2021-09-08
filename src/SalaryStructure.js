@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './style.css';
 import { Doughnut } from 'react-chartjs-2';
 import Earnings from './Earnings';
-export default function SalaryStructure() {
+export default function SalaryStructure({ hideStat }) {
   const data = useState({
     name: 'React',
     data: {
@@ -50,28 +50,36 @@ export default function SalaryStructure() {
     return a + b;
   });
   const yearlyCtc = Math.round(sum * 12);
-  const INR =money=>{return (new Intl.NumberFormat('en-IN').format(money))};
+  const INR = money => {
+    return new Intl.NumberFormat('en-IN').format(money);
+  };
   return (
     <div>
-      <div className="details">
-        <h2>Monthly CTC : ₹{INR(sum)}.00</h2>
-        <h3 style={{ color: 'grey' }}>Yearly CTC : ₹ {INR(yearlyCtc)}.00</h3>
-      </div>
+      {hideStat && (
+        <>
+          <div className="details">
+            <h2>Monthly CTC : ₹{INR(sum)}.00</h2>
+            <h3 style={{ color: 'grey' }}>
+              Yearly CTC : ₹ {INR(yearlyCtc)}.00
+            </h3>
+          </div>
 
-      <Doughnut
-        className="docs"
-        data={data[0].data}
-        // weight={70}
-        // height={76}
-        options={{
-          responsive: true,
-          maintainAspectRatio: true,
-          legend: {
-            display: true,
-            position: 'left'
-          }
-        }}
-      />
+          <Doughnut
+            className="docs"
+            data={data[0].data}
+            // weight={70}
+            // height={76}
+            options={{
+              responsive: true,
+              maintainAspectRatio: true,
+              legend: {
+                display: true,
+                position: 'left'
+              }
+            }}
+          />
+        </>
+      )}
       <div className="container mb-3">
         <h4>Earnings</h4>
         {Earnings.map(earning => {
