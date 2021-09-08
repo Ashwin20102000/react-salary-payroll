@@ -8,11 +8,31 @@ p {
   top: 20px;
   margin-top: 4%;
   margin-bottom: 4%;
-  left: -12%;
 }
 .details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .docs {
+    margin: 40%;
+    position: relative;
+    top: 20px;
+    left: 0px;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    left: -12%;
+  }
+}
+@media (min-width: 1281px) {
+  .docs {
+    margin: 40%;
+    position: relative;
+    top: 20px;
+    margin-top: 4%;
+    margin-bottom: 4%;
+  }
 }

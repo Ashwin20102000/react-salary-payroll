@@ -29,9 +29,10 @@ export default function App() {
           aria-hidden="true"
         >
           <div class="modal-dialog modal-lg">
-            <button class="btn btn-dark" type="button">
-              X
+            <button class="btn btn-light" type="button">
+              ✕
             </button>
+
             <div class="modal-content">
               <Payslip />
             </div>
