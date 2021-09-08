@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SalaryStructure from './SalaryStructure';
 import AnnualEarnings from './AnnualEarnings';
 export default function Payslip() {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
   const togglebtn = toggle ? 'Tax Worksheet →' : '← Payslip';
   return (
     <div className="payslip p-4">
