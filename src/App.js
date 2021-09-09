@@ -12,16 +12,16 @@ export default function App() {
         <button onClick={() => setPagination(1)} className="btn btn-dark">
           Salary Structure
         </button>
-        <button
+        {/* <button
           type="button"
           class="btn btn-dark border mx-3"
           data-toggle="modal"
           data-target=".bd-example-modal-lg"
         >
           Payslip
-        </button>
+        </button> */}
 
-        <div
+        {/* <div
           class="modal fade bd-example-modal-lg"
           tabindex="-1"
           role="dialog"
@@ -37,8 +37,14 @@ export default function App() {
               <Payslip />
             </div>
           </div>
-        </div>
-
+        </div> */}
+        <button
+          type="button"
+          class="btn btn-dark border mx-3"
+          onClick={() => setPagination(2)}
+        >
+          Payslip
+        </button>
         <button
           onClick={() => setPagination(3)}
           className="btn btn-dark border"
@@ -47,6 +53,7 @@ export default function App() {
         </button>
       </div>
       {pagination == 1 && <SalaryStructure hideStat={true} />}
+      {pagination == 2 && <Payslip />}
       {pagination == 3 && <AnnualEarnings />}
     </div>
   );

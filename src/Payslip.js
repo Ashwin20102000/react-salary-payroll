@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import SalaryStructure from './SalaryStructure';
 import AnnualEarnings from './AnnualEarnings';
+import Pdf from 'react-to-pdf';
+const ref = React.createRef();
 export default function Payslip() {
   const [toggle, setToggle] = useState(true);
   const togglebtn = toggle ? 'Tax Worksheet →' : '← Payslip';
@@ -13,7 +15,19 @@ export default function Payslip() {
             src="https://www.tutorialchip.com/wp-content/uploads/2012/08/Technology-Lab.jpg"
             alt="company-logo"
           />
-          <div className="company-details mt-5">
+          <div className="company-details">
+            <Pdf targetRef={ref} filename="payslip.pdf">
+              {({ toPdf }) => (
+                <button className="btn btn-primary" onClick={toPdf}>
+                  Export Payslip
+                </button>
+              )}
+            </Pdf>
+            <div ref={ref}>
+              <div style={{ width: '43%', marginLeft: '7px' }} className="pdf">
+                <Payslip />
+              </div>
+            </div>
             <h5>Technology Labs</h5>
             <h6>
               15 SunCity Gloria,
