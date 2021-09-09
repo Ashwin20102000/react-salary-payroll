@@ -81,7 +81,14 @@ export default function SalaryStructure({ hideStat }) {
         </>
       )}
       <div className="container mb-3">
-        <h4>Earnings</h4>
+        {!hideStat ? (
+          <>
+            <hr style={{ height: '4px', color: '#0dcaf0' }} />
+            <h4 className="text-info">Earnings</h4>
+          </>
+        ) : (
+          <h4>Earnings</h4>
+        )}
         {Earnings.map(earning => {
           return (
             <div className="d-flex justify-content-between">
@@ -92,7 +99,14 @@ export default function SalaryStructure({ hideStat }) {
         })}
       </div>
       <div className="container">
-        <h4>Reimburstments</h4>
+        {!hideStat ? (
+          <>
+            <hr style={{ height: '4px', color: '#0dcaf0' }} />
+            <h4 className="text-info">Reimburstments</h4>
+          </>
+        ) : (
+          <h4>Reimburstments</h4>
+        )}
         {Reimburstments.map(earning => {
           return (
             <div className="d-flex justify-content-between">
@@ -103,7 +117,15 @@ export default function SalaryStructure({ hideStat }) {
         })}
       </div>
       <div className="container mt-3">
-        <h4>Flexible Benefit Plan Components</h4>
+        {!hideStat ? (
+          <>
+            <hr style={{ height: '4px', color: '#0dcaf0' }} />
+            <h4 className="text-info">Flexible Benefit Plan Components</h4>
+          </>
+        ) : (
+          <h4>Flexible Benefit Plan Components</h4>
+        )}
+        <h4 />
         {FlexibleComponent.map(earning => {
           return (
             <div className="d-flex justify-content-between">
@@ -114,7 +136,14 @@ export default function SalaryStructure({ hideStat }) {
         })}
       </div>
       <div className="container mt-3">
-        <h4>Deduction</h4>
+        {!hideStat ? (
+          <>
+            <hr style={{ height: '4px', color: '#0dcaf0' }} />
+            <h4 className="text-info">Deduction</h4>
+          </>
+        ) : (
+          <h4>Deduction</h4>
+        )}
         {Deduction.map(earning => {
           return (
             <div className="d-flex justify-content-between">
