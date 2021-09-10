@@ -42,10 +42,10 @@ export default function Payslip() {
       </div>
 
       <div className="employee container">
-        <hr style={{ height: '3px', color: '#0dcaf0' }} />
-        <h4 className="text-info">EMPLOYEE PAY SUMMARY</h4>
+        <hr className="text-primary" style={{ height: '4px' }} />
+        <h4 className="text-primary">EMPLOYEE PAY SUMMARY</h4>
         <div className="employee-pay container d-flex justify-content-between">
-          <div className="user-details ">
+          {/* <div className="user-details ">
             <div className="d-flex justify-content-between">
               <div className="name mb-1">
                 <strong>Employee Name </strong>
@@ -65,7 +65,16 @@ export default function Payslip() {
               </div>
               <div className="amount mb-1">: 7,20,000</div>
             </div>
-          </div>
+          </div> */}
+          <table>
+            <tbody>
+              <tr>
+                <th scope="row">Employee Name</th>
+                <td>: Shakthi</td>
+              </tr>
+            </tbody>
+          </table>
+
           <div className="pay-details text-dark m-3">
             <p>Employee Net Pay</p>
             <h2>₹ 52,00,000</h2>
@@ -73,8 +82,88 @@ export default function Payslip() {
           </div>
         </div>
       </div>
-
-      {toggle ? <SalaryStructure hideStat={false} /> : <AnnualEarnings />}
+      <div className="container">
+      <hr className="text-primary" style={{ height: '4px' }} /> 
+        <table class="table table-borderless">
+          <thead>
+            <tr className="text-primary">
+              <th scope="col">EARNINGS</th>
+              <th scope="col">AMOUNT</th>
+              <th scope="col">YTD</th>
+           
+            </tr>
+      
+          </thead>
+          <tbody>
+            <tr>
+              <td>Basic</td>
+              <td>₹ 52,00,000</td>
+              <td>₹ 52,00,000</td>
+            </tr>
+            <tr>
+              <th scope="row">Grooss Pay</th>
+              <td>₹ 52,00,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div className="container">
+      <hr className="text-primary" style={{ height: '4px'}} /> 
+        <table class="table table-borderless">
+          <thead>
+            <tr className="text-primary">
+              <th scope="col">DEDUCTIONS</th>
+              <th scope="col">(-)AMOUNT</th>
+              <th scope="col">YTD</th>
+           
+            </tr>
+      
+          </thead>
+          <tbody>
+            <tr>
+              <td>EPF CONTIBUTION</td>
+              <td>₹ 52,00,000</td>
+              <td>₹ 52,00,000</td>
+            </tr>
+            <tr>
+              <th scope="row">Total Deductions</th>
+              <td>₹ 52,00,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div className="container">
+      <hr className="text-primary" style={{ height: '4px'}} /> 
+        <table class="table table-borderless">
+          <thead>
+            <tr className="text-primary">
+              <th scope="col">REIMBURSTMENTS</th>
+              <th scope="col">AMOUNT</th>
+              <th scope="col">YTD</th>
+           
+            </tr>
+      
+          </thead>
+          <tbody>
+            <tr>
+              <td>Leave Travel Allowance</td>
+              <td>₹ 52,00,000</td>
+              <td>₹ 52,00,000</td>
+            </tr>
+            <tr>
+              <th scope="row">Total Reimburstments</th>
+              <td>₹ 52,00,000</td>
+            </tr>
+            <tr style={{background:"#cce2e8", color:"#0b8eb3"}} className=" p-4">
+              <th scope="row">Net Pay((Gross Earnings - Deductions)+Reimburstments )</th>
+              <td>₹ 52,00,000</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Total Net Payable  <strong>₹ 52,00,000</strong> </h3>
+        <hr className="text-primary" style={{ height: '4px'}} /> 
+      </div>
     </div>
   );
 }
